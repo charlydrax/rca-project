@@ -92,7 +92,7 @@ def check_redis_connected():
 def check_db_schema_valid():
     try:
         result = subprocess.run(
-            ["docker", "compose", "exec", "-T", "database",
+            ["docker", "compose", "exec", "-T", "db",
              "psql", "-U", "taskuser", "-d", "taskdb", "-c",
              "SELECT column_name FROM information_schema.columns WHERE table_name='tasks' ORDER BY ordinal_position;"],
             capture_output=True, text=True, timeout=15

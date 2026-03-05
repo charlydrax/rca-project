@@ -16,7 +16,7 @@ allowed_origins = [origin.strip() for origin in raw_origins.split(",")]
 
 CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
 
-DATABASE_URL = os.environ.get("DATABASE_URL", "postgres://taskuser:taskpass@database:5432/taskdb")
+DATABASE_URL = os.environ.get("DATABASE_URL", "postgres://taskuser:taskpass@db:5432/taskdb")
 REDIS_URL = os.environ["REDIS_URL"]
 
 search_history = []
