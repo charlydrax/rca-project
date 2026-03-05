@@ -1,6 +1,6 @@
 
 services:
-  db:
+  database:
     image: postgres:15-alpine
     environment:
       POSTGRES_DB: taskdb
@@ -26,7 +26,7 @@ services:
       DATABASE_URL: "postgres://taskuser:taskpass@database:5432/taskdb"
       REDIS_URL: "redis://redis:6379"
     depends_on:
-      - db
+      - database
       - redis
     volumes:
       - ./backend:/app
